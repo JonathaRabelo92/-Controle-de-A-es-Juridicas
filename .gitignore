@@ -1,0 +1,24 @@
+# OS
+Thumbs.db
+.DS_Store
+
+# Node
+node_modules/
+
+# IDE
+.vscode/
+
+# logs
+logs
+*.log
+npm-debug.log*
+
+# Misc
+.env
+
+# Dist/Build
+dist/
+build/
+
+# Local History
+.history/

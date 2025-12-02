@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Painel de Controle Jurídico</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Sistema de Controle Jurídico</h1>
+        <div class="user">
+            <span id="username"></span>
+            <button onclick="sair()" class="btn-acao" style="margin-left:10px;">Sair</button>
+        </div>
+    </header>
+
+    <nav>
+        <button onclick="mostrarAba('advogados')" class="active">Advogados</button>
+        <button onclick="mostrarAba('clientes')">Clientes</button>
+        <button onclick="mostrarAba('juizes')">Juízes</button>
+    </nav>
+
+    <div class="conteudo">
+
+        <div id="advogados" class="secao ativa">
+            <h2>Gerenciar Advogados</h2>
+            <input type="hidden" id="advogadoIndex"> <input type="text" id="nomeAdvogado" placeholder="Nome do Advogado">
+            <input type="text" id="oabAdvogado" placeholder="Nº OAB">
+            <button class="btn-acao" onclick="salvarAdvogado()">Salvar Advogado</button>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>OAB</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaAdvogados">
+                    </tbody>
+            </table>
+        </div>
+
+        <div id="clientes" class="secao">
+            <h2>Gerenciar Clientes</h2>
+            <input type="hidden" id="clienteIndex">
+            <input type="text" id="nomeCliente" placeholder="Nome do Cliente">
+            <input type="text" id="cpfCliente" placeholder="Nº CPF">
+            <button class="btn-acao" onclick="salvarCliente()">Salvar Cliente</button>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaClientes"></tbody>
+            </table>
+        </div>
+
+        <div id="juizes" class="secao">
+            <h2>Gerenciar Juízes</h2>
+            <input type="hidden" id="juizIndex">
+            <input type="text" id="nomeJuiz" placeholder="Nome do Juíz">
+            <input type="text" id="matriculaJuiz" placeholder="Matrícula">
+            <input type="text" id="varaJuiz" placeholder="Vara (ex: 1ª Vara Cível)">
+            <button class="btn-acao" onclick="salvarJuiz()">Salvar Juíz</button>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Matrícula</th>
+                        <th>Vara</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaJuizes"></tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script src="./js/app.js" defer></script>
+    <script src="./js/login.js" defer></script>
+</body>
+</html>
